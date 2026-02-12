@@ -1,0 +1,26 @@
+FROM mcr.microsoft.com/devcontainers/base:ubuntu
+
+# {{TOOLCHAIN_ARGS}}
+
+# Install base dependencies
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y --no-install-recommends \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg \
+        lsb-release \
+        software-properties-common \
+        sudo \
+        git \
+        wget \
+        unzip \
+        xvfb \
+    && rm -rf /var/lib/apt/lists/*
+
+# {{TOOLCHAIN_INSTALLS}}
+
+# Set up vscode user permissions
+# {{USER_SETUP}}
+
+USER vscode
