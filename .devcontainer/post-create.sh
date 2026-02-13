@@ -3,6 +3,10 @@ set -euo pipefail
 
 echo "=== Post-create setup ==="
 
+# Initialize git submodules (BMAD-METHOD, wa-agents, etc.)
+echo "[info] Initializing git submodules..."
+cd /workspaces/mac-de && git submodule update --init --recursive
+
 # Copy kube config from host mount (mounted via devcontainer.json)
 if [ -f /home/vscode/.kube/config ]; then
   echo "[ok] ~/.kube/config already present"

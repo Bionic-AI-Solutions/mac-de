@@ -4,3 +4,6 @@
 [submodule "wa-agents"]
 	path = wa-agents
 	url = https://github.com/Bionic-AI-Solutions/wa-agents.git
+[submodule "awesome-llm-apps"]
+	path = awesome-llm-apps
+	url = https://github.com/Shubhamsaboo/awesome-llm-apps.git
