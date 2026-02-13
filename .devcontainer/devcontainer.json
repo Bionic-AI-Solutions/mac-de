@@ -6,7 +6,7 @@
   },
   "runArgs": ["--platform=linux/amd64"],
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/wa-agents",
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
     "source=${localEnv:HOME}/.kube,target=/home/vscode/.kube,type=bind,consistency=cached"
@@ -20,6 +20,6 @@
   },
   "remoteUser": "vscode",
   "containerUser": "vscode",
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postCreateCommand": "bash /workspaces/mac-de/.devcontainer/post-create.sh",
   "features": {}
 }
